@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <navbar></navbar>
+    <v-main>
+      <router-view />
+    </v-main>
+    <v-footer>
+      <div class="mx-auto">
+        <span>&copy; AIPS {{ new Date().getFullYear() }} </span>
+      </div>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "@/components/nav/Navbar";
+import { mapActions } from "vuex";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Navbar,
+  },
+  data: () => ({
+    //
+  }),
+  methods: {
+    ...mapActions(["fetchCities"]),
+  },
+  mounted() {
+    this.fetchCities();
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

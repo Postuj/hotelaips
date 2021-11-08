@@ -161,9 +161,6 @@
               <v-divider class="black"></v-divider>
               <div class="my-2 d-flex align-end">
                 <div class="text-h5 black--text mr-2">
-                  <!-- <span class="green--text text--darken-3"
-                    >{{ hotel.minPrice }} - {{ hotel.maxPrice }} zł</span
-                  >, {{ hotel.h_name }}, -->
                   <div>
                     {{ hotel.h_name }},
                     <span class="text-h6 grey--text text--darken-2">{{
@@ -370,7 +367,7 @@ export default {
   computed: {
     ...mapGetters(["getCities"]),
     finalPrice() {
-      if (this.selectedHotel)
+      if (this.selectedRoom)
         return (
           this.daysBetween(new Date(this.startDate), new Date(this.endDate)) *
           this.selectedRoom.price

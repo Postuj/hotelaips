@@ -1,0 +1,7 @@
+model jak będzie przebiegał proces rezerwacji
+ - najpierw wybrać miasto
+ - wybrać hotel
+ - wybrać pokój
+ - wypełnić forumalarz
+ - wysłać rezerwacje
+ - potwierdzić wysłanie rezerwacji
